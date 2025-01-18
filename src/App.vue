@@ -54,7 +54,7 @@
       </p>
       <p>
         计算机软件著作权登记号:
-        <a href="https://cccopyright.com.cn/">2025SR0102045<br/>
+        <a href="https://www.ccopyright.com.cn/">2025SR0102045<br/>
           软著登字第14758243号</a>
       </p>
       <p>
