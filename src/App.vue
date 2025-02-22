@@ -13,15 +13,15 @@
           <img
             style="width: 100px"
             src="./assets/logo.png"
-            alt="Element logo"
           />
         </el-menu-item>
-        <el-menu-item index="1" @click="onClickHomeNav"
-          ><RouterLink to="/">首页</RouterLink></el-menu-item
+        <el-menu-item index="1"
+          >首页</el-menu-item
         >
         <el-menu-item index="2"
-          ><RouterLink to="/download">下载</RouterLink></el-menu-item
+          >下载</el-menu-item
         >
+        <!--
         <el-menu-item index="3"
           ><RouterLink to="/about">关于</RouterLink></el-menu-item
         >
@@ -41,6 +41,7 @@
           >
           <el-menu-item index="5-4">更多... </el-menu-item>
         </el-sub-menu>
+        -->
       </el-menu>
     </header>
     <main>
@@ -54,35 +55,35 @@
       </p>
       <p>
         计算机软件著作权登记号:
-        <a href="https://www.ccopyright.com.cn/">2025SR0102045<br/>
-          软著登字第14758243号</a>
+        <a href="https://www.ccopyright.com.cn/">2025SR0102045</a>
       </p>
-      <p>
-        <a href="https://icp.gov.moe/?keyword=20240457" target="_blank">萌ICP备20240457号</a>
-      </p>
-      <p>Copyright © 2024 THZ(Aurora Studio). All rights reserved.</p>
+      <a href="https://www.ccopyright.com.cn/">软著登字第14758243号</a>
+      <br/>
+      <a target="_blank" href="https://beian.miit.gov.cn/">粤ICP备2025371287号-1</a>
+      <p>Copyright © 2022-{{ new Date().getFullYear() }} Aurora Studio(THZ). All rights reserved.</p>
     </footer>
   </div>
 </template>
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
+<script lang="js" setup>
+import { useRouter, RouterView } from 'vue-router'
 import { ref } from 'vue'
 
+const router = useRouter()
 const activeIndex = ref('1')
-const handleSelect = (key, keyPath) => {
-  console.log(key, keyPath)
-}
-function onClickHomeNav() {
-  RouterLink.push('/')
+const handleSelect = function (key) {
+  const routesMap = {
+    1: '/',
+    2: '/download'
+  }
+  router.push(routesMap[key] || '/')
 }
 </script>
 <style>
 .el-menu--horizontal > .el-menu-item:nth-child(1) {
   margin-right: auto;
 }
-a {
-  text-decoration: none; /* 去除下划线 */
-  color: #333; /* 字体颜色 */
+a{
+  font-family: ALMM;
 }
 .app-container {
   flex: 1; /* 页面其他内容填充剩余空间 */
